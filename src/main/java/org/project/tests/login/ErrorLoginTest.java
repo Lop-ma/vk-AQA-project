@@ -1,40 +1,23 @@
-package org.project.tests;
+package org.project.tests.login;
 
 import org.project.core.pages.LoginPage;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
-import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 import org.project.core.valueObjects.User;
+import org.project.tests.BaseTest;
 
-public class LoginTest extends BaseTest {
+public class ErrorLoginTest extends BaseTest {
+
     LoginPage loginPage;
     User user;
 
     @BeforeEach
     public void createLoginPage() {
         loginPage = new LoginPage();
-    }
-
-    @Test
-    @DisplayName("Test login to ok.ru with correct data")
-    @Tag("login")
-    public void testSuccessLogin() {
-        user = new User(
-                "technopol68",
-                "technopolisPassword",
-                "technopol68",
-                "technopol68"
-        );
-
-        String expectedResult = user.getName() + " " + user.getSurname();
-        String actualResult = loginPage.successLogin(user).getShouldHaveName();
-        String errorMessage = "Login user failed";
-
-        Assertions.assertEquals(expectedResult, actualResult, errorMessage);
     }
 
     @ParameterizedTest
@@ -50,6 +33,7 @@ public class LoginTest extends BaseTest {
     public void testFailLogin(String login, String password, String expectedResult, String errorMessage) {
         user = new User(login, password);
         String actualResult = loginPage.getErrorLoginMessage(user);
+
         Assertions.assertEquals(expectedResult, actualResult, errorMessage);
     }
 }
