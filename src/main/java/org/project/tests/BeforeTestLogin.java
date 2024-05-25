@@ -4,7 +4,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.project.core.pages.LoginPage;
 import org.project.core.valueObjects.User;
 
-import static org.project.core.valueObjects.TestBot.useTestBot;
+import static org.project.core.valueObjects.testDate.TestBot.useTestBot;
 
 public class BeforeTestLogin extends BaseTest {
     LoginPage loginPage;

@@ -1,8 +1,10 @@
 package org.project.core.pages;
 
 import org.openqa.selenium.By;
+import org.project.core.elements.NavigationMenu;
 import org.project.core.elements.PostPublicationForm;
 import org.project.core.loadable.LoadableElements;
+import org.project.core.valueObjects.Post;
 
 import static com.codeborne.selenide.Condition.enabled;
 import static com.codeborne.selenide.Condition.visible;
@@ -23,9 +25,9 @@ public class MainPage extends LoadableElements {
     private static final String HOBBIES_ON_MAIN_PAGE = "Block with hobbies should be enabled on Main page";
     private static final String USER_AVATAR_ON_MAIN_PAGE = "User avatar should be enabled on Main page";
     private static final String FRIENDS_ONLINE_ON_MAIN_PAGE = "Block with friends online should be enabled on Main page";
-    private static final String USER_NAME_FOR_GET_NAME = "User name should be enabled for get name";
     private static final String PUBLISH_BUTTON_FOR_POST_NOTE = "Publish button should be enabled for post note";
     private static final String PUBLISH_NOTE_BUTTON_FOR_POST_NOTE = "Publish note button should be enabled for post note";
+    private static final String USER_NAME_FOR_GET_NAME = "Block with user name should be visible for get name";
 
     public MainPage() {
         this.check();
@@ -41,7 +43,7 @@ public class MainPage extends LoadableElements {
         return this;
     }
 
-    public String postNoteFromMainPage() {
+    public String postNoteFromMainPage(Post post) {
         $(PUBLISH_BUTTON)
                 .shouldBe(enabled.because(PUBLISH_BUTTON_FOR_POST_NOTE))
                 .click();
@@ -49,9 +51,8 @@ public class MainPage extends LoadableElements {
                 .shouldBe(enabled.because(PUBLISH_NOTE_BUTTON_FOR_POST_NOTE))
                 .click();
 
-        PostPublicationForm postForm = new PostPublicationForm();
-        return postForm
-                .publishPost("qqq")
+        return new PostPublicationForm()
+                .publishPost(post.text())
                 .getShouldHavePostMessage();
     }
 
@@ -59,5 +60,10 @@ public class MainPage extends LoadableElements {
         return $(USER_NAME)
                 .shouldHave(visible.because(USER_NAME_FOR_GET_NAME))
                 .getText();
+    }
+
+    public UserPage goToUserPage() {
+        return new NavigationMenu()
+                .goToUserPage();
     }
 }

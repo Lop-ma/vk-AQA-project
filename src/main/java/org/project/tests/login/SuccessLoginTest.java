@@ -9,7 +9,7 @@ import org.junit.jupiter.api.Test;
 import org.project.core.valueObjects.User;
 import org.project.tests.BaseTest;
 
-import static org.project.core.valueObjects.TestBot.useTestBot;
+import static org.project.core.valueObjects.testDate.TestBot.useTestBot;
 
 public class SuccessLoginTest extends BaseTest {
     LoginPage loginPage;

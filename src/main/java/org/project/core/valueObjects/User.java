@@ -1,10 +1,10 @@
 package org.project.core.valueObjects;
 
 public class User {
-    private String login;
-    private String password;
-    private String name;
-    private String surname;
+    private final String login;
+    private final String password;
+    private final String name;
+    private final String surname;
 
     public User(String login, String password, String name, String surname) {
         this.login = login;

@@ -11,7 +11,6 @@ import org.project.core.valueObjects.User;
 import org.project.tests.BaseTest;
 
 public class ErrorLoginTest extends BaseTest {
-
     LoginPage loginPage;
     User user;
 

@@ -1,4 +1,6 @@
-package org.project.core.valueObjects;
+package org.project.core.valueObjects.testDate;
+
+import org.project.core.valueObjects.User;
 
 public class TestBot {
     public static User useTestBot() {

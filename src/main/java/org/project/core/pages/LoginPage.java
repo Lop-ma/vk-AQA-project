@@ -14,12 +14,12 @@ public class LoginPage extends LoadableElements {
     private static final By ERROR_MESSAGE = By.xpath(".//div[@class='input-e login_error']");
 
     private static final String INPUT_LOGIN_ON_LOGIN_PAGE = "Login input field should be enabled on Login page";
-    private static final String INPUT_LOGIN_SET_VALUE = "Login input field should be enabled for enter login";
     private static final String INPUT_PASSWORD_ON_LOGIN_PAGE = "Password input field should be enabled on Login page";
-    private static final String INPUT_PASSWORD_SET_VALUE = "Password input field should be enabled for enter login";
     private static final String LOGIN_BUTTON_ON_LOGIN_PAGE = "Login button should be enabled on Login page";
-    private static final String LOGIN_BUTTON_CLICK = "Login button should be enabled for click";
-    private static final String ERROR_MESSAGE_GET_TEXT = "Error message should be enabled for get text";
+    private static final String INPUT_LOGIN_FOR_SET_LOGIN = "Login input field should be enabled for set user login";
+    private static final String INPUT_PASSWORD_FOR_SET_PASSWORD = "Password input field should be enabled for set user password";
+    private static final String LOGIN_BUTTON_FOR_LOGIN_USER = "Login button should be enabled for login user";
+    private static final String ERROR_MESSAGE_FOR_GET_ERROR_TEXT = "Error message should be enabled for get error text";
 
     public LoginPage() {
         this.check();
@@ -33,15 +33,26 @@ public class LoginPage extends LoadableElements {
         return this;
     }
 
-    public LoginPage login(User user) {
+    private LoginPage setLoginInLoginForm(User user) {
         $(INPUT_LOGIN)
-                .shouldBe(enabled.because(INPUT_LOGIN_SET_VALUE))
+                .shouldBe(enabled.because(INPUT_LOGIN_FOR_SET_LOGIN))
                 .setValue(user.getLogin());
+        return this;
+    }
+
+    private LoginPage setPasswordInLoginForm(User user) {
         $(INPUT_PASSWORD)
-                .shouldBe(enabled.because(INPUT_PASSWORD_SET_VALUE))
+                .shouldBe(enabled.because(INPUT_PASSWORD_FOR_SET_PASSWORD))
                 .setValue(user.getPassword());
+        return this;
+    }
+
+    public LoginPage login(User user) {
+        this
+                .setLoginInLoginForm(user)
+                .setPasswordInLoginForm(user);
         $(LOGIN_BUTTON)
-                .shouldBe(enabled.because(LOGIN_BUTTON_CLICK))
+                .shouldBe(enabled.because(LOGIN_BUTTON_FOR_LOGIN_USER))
                 .click();
         return this;
     }
@@ -54,7 +65,7 @@ public class LoginPage extends LoadableElements {
     public String getErrorLoginMessage(User user) {
         this.login(user);
         return $(ERROR_MESSAGE)
-                .shouldBe(enabled.because(ERROR_MESSAGE_GET_TEXT))
+                .shouldBe(enabled.because(ERROR_MESSAGE_FOR_GET_ERROR_TEXT))
                 .getText();
     }
 }
