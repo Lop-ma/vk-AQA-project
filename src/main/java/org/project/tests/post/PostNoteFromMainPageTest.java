@@ -1,6 +1,5 @@
 package org.project.tests.post;
 
-import com.codeborne.selenide.Selenide;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
@@ -8,21 +7,20 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.project.core.pages.MainPage;
-import org.project.core.pages.UserPage;
+import org.project.core.steps.LoginAndPostSteps;
 import org.project.core.valueObjects.Post;
-import org.project.tests.BeforeTestLogin;
+import org.project.tests.BaseTest;
 
-import static org.project.core.valueObjects.testDate.TestPost.useTestPost;
+public class PostNoteFromMainPageTest extends BaseTest {
 
-public class PostNoteFromMainPageTest extends BeforeTestLogin {
+    private final LoginAndPostSteps steps = new LoginAndPostSteps();
     MainPage mainPage;
-    UserPage userPage;
     Post post;
 
     @BeforeEach
     public void createMainPage() {
+        post = steps.LoginAndPreparePost();
         mainPage = new MainPage();
-        post = useTestPost();
     }
 
     @Test
@@ -38,8 +36,6 @@ public class PostNoteFromMainPageTest extends BeforeTestLogin {
 
     @AfterEach
     public void clearUserPage() {
-        userPage = mainPage.goToUserPage();
-        Selenide.refresh();
-        userPage.deletePost(post);
+        steps.GoToUserPageAndDeletePost(post);
     }
 }

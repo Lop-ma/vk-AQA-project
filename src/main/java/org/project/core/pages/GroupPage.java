@@ -86,6 +86,7 @@ public class GroupPage extends LoadableElements {
 
     public GroupPage changeGroupCategory(String newCategory) {
         return this
+                .openMenu()
                 .openSettings()
                 .changeCategory(newCategory)
                 .saveSettings()
