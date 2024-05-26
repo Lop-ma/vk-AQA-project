@@ -1,4 +1,4 @@
-package org.project.tests.login;
+package org.project.tests.authorization;
 
 import org.project.core.pages.LoginPage;
 import org.junit.jupiter.api.Assertions;

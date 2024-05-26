@@ -2,7 +2,6 @@ package org.project.core.pages;
 
 import org.openqa.selenium.By;
 import org.project.core.elements.NavigationMenu;
-import org.project.core.elements.PostPublicationForm;
 import org.project.core.loadable.LoadableElements;
 import org.project.core.valueObjects.Post;
 
@@ -44,16 +43,8 @@ public class MainPage extends LoadableElements {
     }
 
     public String postNoteFromMainPage(Post post) {
-        $(PUBLISH_BUTTON)
-                .shouldBe(enabled.because(PUBLISH_BUTTON_FOR_POST_NOTE))
-                .click();
-        $(PUBLISH_NOTE)
-                .shouldBe(enabled.because(PUBLISH_NOTE_BUTTON_FOR_POST_NOTE))
-                .click();
-
-        return new PostPublicationForm()
-                .publishPost(post.text())
-                .getShouldHavePostMessage();
+        return new NavigationMenu()
+                .postNote(post);
     }
 
     public String getShouldHaveName() {
@@ -65,5 +56,10 @@ public class MainPage extends LoadableElements {
     public UserPage goToUserPage() {
         return new NavigationMenu()
                 .goToUserPage();
+    }
+
+    public GroupsPage goToGroupsPage() {
+        return new NavigationMenu()
+                .goToGroupsPage();
     }
 }
