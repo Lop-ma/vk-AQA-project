@@ -20,12 +20,12 @@ public class GroupsPage extends LoadableElements {
     private static final String START_GROUP_LOCATOR = ".//div[@class='ugrid_i' and .//*[contains(text(), '";
     private static final String END_GROUP_LOCATOR = "')]]";
 
-    private static final String GROUPS_CATALOG_HEADER_ON_GROUPS_PAGE = "";
-    private static final String GROUP_SEARCH_INPUT_ON_GROUPS_PAGE = "";
-    private static final String RECOMMENDATIONS_CATALOG_ON_GROUPS_PAGE = "";
-    private static final String HOLDER_BUTTON_MY_FOR_OPEN_MY_GROUPS = "";
-    private static final String MY_GROUPS_BUTTON_FOR_OPEN_MY_GROUPS = "";
-    private static final String GROUP_CARD_FOR_OPEN_GROUP_PAGE = "";
+    private static final String GROUPS_CATALOG_HEADER_ON_GROUPS_PAGE = "Groups catalog header should be enabled on Groups page";
+    private static final String GROUP_SEARCH_INPUT_ON_GROUPS_PAGE = "Groups search input should be visible on Groups page";
+    private static final String RECOMMENDATIONS_CATALOG_ON_GROUPS_PAGE = "Recommendations catalog should be enabled on Groups page";
+    private static final String HOLDER_BUTTON_MY_FOR_OPEN_MY_GROUPS = "Holder button 'My' should be enabled for open my groups";
+    private static final String MY_GROUPS_BUTTON_FOR_OPEN_MY_GROUPS = "Button 'My groups' should be enabled for open my groups";
+    private static final String GROUP_CARD_FOR_OPEN_GROUP_PAGE = "Group card should be enabled for open Group page";
 
 
     public GroupsPage() {
@@ -54,7 +54,7 @@ public class GroupsPage extends LoadableElements {
     }
 
     public GroupPage findAndOpenGroup(Group group) {
-        $(By.xpath(START_GROUP_LOCATOR + group.getName() + END_GROUP_LOCATOR))
+        $(By.xpath(START_GROUP_LOCATOR + group.name() + END_GROUP_LOCATOR))
                 .shouldBe(enabled.because(GROUP_CARD_FOR_OPEN_GROUP_PAGE))
                 .click();
         return new GroupPage();

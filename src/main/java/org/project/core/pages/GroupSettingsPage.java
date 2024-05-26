@@ -21,14 +21,14 @@ public class GroupSettingsPage extends LoadableElements {
     private static final String START_CATEGORY_LOCATOR = ".//div[contains(@class, 'tree') and @data-value='";
     private static final String END_CATEGORY_LOCATOR = "']";
 
-    private static final String GROUP_SETTINGS_MAIN_ON_GROUP_SETTINGS_PAGE = "";
-    private static final String GROUP_SETTINGS_HEADER_ON_GROUP_SETTINGS_PAGE = "";
-    private static final String GROUP_SETTINGS_CATALOG_ON_GROUP_SETTINGS_PAGE = "";
-    private static final String INPUT_NAME_FOR_RENAME_GROUP = "";
-    private static final String SELECT_CATEGORY_FOR_CHANGE_CATEGORY = "";
-    private static final String CATEGORY_FOR_CHANGE_CATEGORY = "";
-    private static final String SAVE_SETTINGS_BUTTON_FOR_SAVE_SETTINGS = "";
-    private static final String CANCEL_CHANGE_FOR_CLOSE_SETTINGS = "";
+    private static final String GROUP_SETTINGS_MAIN_ON_GROUP_SETTINGS_PAGE = "Group settings main block should be enabled on Group settings page";
+    private static final String GROUP_SETTINGS_HEADER_ON_GROUP_SETTINGS_PAGE = "Group settings header visible be enabled on Group settings page";
+    private static final String GROUP_SETTINGS_CATALOG_ON_GROUP_SETTINGS_PAGE = "Group settings catalog should be enabled on Group settings page";
+    private static final String INPUT_NAME_FOR_RENAME_GROUP = "Input name should be enabled for rename group";
+    private static final String SELECT_CATEGORY_FOR_CHANGE_CATEGORY = "Select category button should be enabled for change category";
+    private static final String CATEGORY_FOR_CHANGE_CATEGORY = "Category button should be enabled for change category";
+    private static final String SAVE_SETTINGS_BUTTON_FOR_SAVE_SETTINGS = "Save settings button should be enabled for save settings";
+    private static final String CANCEL_CHANGE_FOR_CLOSE_SETTINGS = "Cancel change button should be enabled for close settings";
 
     public GroupSettingsPage() {
         this.check();

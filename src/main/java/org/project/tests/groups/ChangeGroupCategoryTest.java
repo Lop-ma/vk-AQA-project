@@ -12,10 +12,9 @@ import org.project.core.valueObjects.enums.GroupCategory;
 import org.project.tests.BaseTest;
 
 public class ChangeGroupCategoryTest extends BaseTest {
-
     private final LoginAndGroupSteps steps = new LoginAndGroupSteps();
-    GroupPage groupPage;
-    String oldCategory;
+    private GroupPage groupPage;
+    private String oldCategory;
 
     @BeforeEach
     public void createMainPage() {

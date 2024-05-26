@@ -11,10 +11,9 @@ import org.project.core.valueObjects.Post;
 import org.project.tests.BaseTest;
 
 public class DeletePostTest extends BaseTest {
-
     private final LoginAndPostSteps steps = new LoginAndPostSteps();
-    UserPage userPage;
-    Post post;
+    private UserPage userPage;
+    private Post post;
 
     @BeforeEach
     public void createMainPage() {

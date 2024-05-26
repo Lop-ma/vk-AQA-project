@@ -12,10 +12,9 @@ import org.project.core.valueObjects.Post;
 import org.project.tests.BaseTest;
 
 public class PostNoteFromMainPageTest extends BaseTest {
-
     private final LoginAndPostSteps steps = new LoginAndPostSteps();
-    MainPage mainPage;
-    Post post;
+    private MainPage mainPage;
+    private Post post;
 
     @BeforeEach
     public void createMainPage() {

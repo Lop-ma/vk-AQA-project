@@ -12,8 +12,8 @@ import org.project.tests.BaseTest;
 import static org.project.core.valueObjects.testDate.TestBot.useTestBot;
 
 public class SuccessLoginTest extends BaseTest {
-    LoginPage loginPage;
-    User user;
+    private LoginPage loginPage;
+    private User user;
 
     @BeforeEach
     public void createLoginPage() {

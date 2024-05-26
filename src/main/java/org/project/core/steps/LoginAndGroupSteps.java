@@ -12,7 +12,6 @@ import static org.project.core.valueObjects.testDate.TestBot.useTestBot;
 import static org.project.core.valueObjects.testDate.TestGroup.useTestGroup;
 
 public class LoginAndGroupSteps {
-
     public GroupPage loginAndFindGroup() {
         User user = useTestBot();
         new LoginPage()

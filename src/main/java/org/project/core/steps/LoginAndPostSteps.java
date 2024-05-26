@@ -11,7 +11,6 @@ import static org.project.core.valueObjects.testDate.TestBot.useTestBot;
 import static org.project.core.valueObjects.testDate.TestPost.useTestPost;
 
 public class LoginAndPostSteps {
-
     public Post LoginAndPreparePost() {
         User user = useTestBot();
         new LoginPage()

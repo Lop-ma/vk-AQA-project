@@ -24,8 +24,6 @@ public class MainPage extends LoadableElements {
     private static final String HOBBIES_ON_MAIN_PAGE = "Block with hobbies should be enabled on Main page";
     private static final String USER_AVATAR_ON_MAIN_PAGE = "User avatar should be enabled on Main page";
     private static final String FRIENDS_ONLINE_ON_MAIN_PAGE = "Block with friends online should be enabled on Main page";
-    private static final String PUBLISH_BUTTON_FOR_POST_NOTE = "Publish button should be enabled for post note";
-    private static final String PUBLISH_NOTE_BUTTON_FOR_POST_NOTE = "Publish note button should be enabled for post note";
     private static final String USER_NAME_FOR_GET_NAME = "Block with user name should be visible for get name";
 
     public MainPage() {

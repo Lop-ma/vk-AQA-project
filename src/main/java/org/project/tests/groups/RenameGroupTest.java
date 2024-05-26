@@ -11,10 +11,9 @@ import org.project.core.steps.LoginAndGroupSteps;
 import org.project.tests.BaseTest;
 
 public class RenameGroupTest extends BaseTest {
-
     private final LoginAndGroupSteps steps = new LoginAndGroupSteps();
-    GroupPage groupPage;
-    String oldName;
+    private GroupPage groupPage;
+    private String oldName;
 
     @BeforeEach
     public void createMainPage() {

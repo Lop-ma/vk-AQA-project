@@ -12,11 +12,9 @@ import org.project.core.valueObjects.Post;
 import org.project.tests.BaseTest;
 
 public class LikePostTest extends BaseTest {
-
     private final LoginAndPostSteps steps = new LoginAndPostSteps();
-
-    Post post;
-    UserPage userPage;
+    private Post post;
+    private UserPage userPage;
 
     @BeforeEach
     public void createMainPage() {

@@ -8,7 +8,6 @@ import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$;
 
 public class GroupPage extends LoadableElements {
-
     private static final By GROUP_AVATAR = By.xpath(".//div[@class='entity-avatar']");
     private static final By GROUP_NAME = By.xpath(".//div[@class='group-name_t']");
     private static final By GROUP_CATEGORY = By.xpath(".//div[@class='group-name_info']");
@@ -18,17 +17,16 @@ public class GroupPage extends LoadableElements {
     private static final By DELETE_GROUP = By.xpath(".//a[@class='u-menu_a ' and text()='Удалить']");
     private static final By CONFIRM_DELETE_BUTTON = By.xpath(".//input[@name='button_delete']");
 
-    private static final String GROUP_AVATAR_ON_GROUP_PAGE = "";
-    private static final String GROUP_NAME_ON_GROUP_PAGE = "";
-    private static final String GROUP_CATEGORY_ON_GROUP_PAGE = "";
-    private static final String GROUP_FEED_ON_GROUP_PAGE = "";
-    private static final String THREE_DOT_MENU_FOR_OPEN_MENU = "";
-    private static final String DELETE_GROUP_FOR_DELETE_GROUP = "";
-    private static final String CONFIRM_DELETE_BUTTON_FOR_CONFIRM_DELETE = "";
-    private static final String GROUP_SETTINGS_FOR_OPEN_SETTINGS = "";
-    private static final String GROUP_NAME_FOR_GET_NAME = "";
-    private static final String GROUP_CATEGORY_FOR_GET_CATEGORY = "";
-
+    private static final String GROUP_AVATAR_ON_GROUP_PAGE = "Group avatar should be enabled on group page";
+    private static final String GROUP_NAME_ON_GROUP_PAGE = "Group name should be visible on group page";
+    private static final String GROUP_CATEGORY_ON_GROUP_PAGE = "Group category should be visible on group page";
+    private static final String GROUP_FEED_ON_GROUP_PAGE = "Group feed should be enabled on group page";
+    private static final String THREE_DOT_MENU_FOR_OPEN_MENU = "Three dot menu button should be enabled for open menu";
+    private static final String DELETE_GROUP_BUTTON_FOR_DELETE_GROUP = "Delete group button should be enabled for delete group";
+    private static final String CONFIRM_DELETE_BUTTON_FOR_CONFIRM_DELETE = "Confirm delete button should be enabled for confirm delete";
+    private static final String GROUP_SETTINGS_FOR_OPEN_SETTINGS = "Group settings button should be enabled for open settings";
+    private static final String GROUP_NAME_FOR_GET_NAME = "Group name should be visible for get group name";
+    private static final String GROUP_CATEGORY_FOR_GET_CATEGORY = "Group category should be visible for get group category";
 
     public GroupPage() {
         this.check();
@@ -41,7 +39,7 @@ public class GroupPage extends LoadableElements {
         $(GROUP_NAME)
                 .shouldBe(visible.because(GROUP_NAME_ON_GROUP_PAGE));
         $(GROUP_CATEGORY)
-                .shouldBe(enabled.because(GROUP_CATEGORY_ON_GROUP_PAGE));
+                .shouldBe(visible.because(GROUP_CATEGORY_ON_GROUP_PAGE));
         $(GROUP_FEED)
                 .shouldBe(enabled.because(GROUP_FEED_ON_GROUP_PAGE));
         return this;
@@ -57,7 +55,7 @@ public class GroupPage extends LoadableElements {
 
     private GroupPage clickDeleteGroup() {
         $(DELETE_GROUP)
-                .shouldBe(enabled.because(DELETE_GROUP_FOR_DELETE_GROUP))
+                .shouldBe(enabled.because(DELETE_GROUP_BUTTON_FOR_DELETE_GROUP))
                 .click();
         return this;
     }

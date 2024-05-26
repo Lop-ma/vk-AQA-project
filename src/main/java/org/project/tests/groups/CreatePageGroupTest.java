@@ -13,12 +13,11 @@ import org.project.core.valueObjects.Group;
 import org.project.tests.BaseTest;
 
 public class CreatePageGroupTest extends BaseTest {
-
     private final LoginAndGroupSteps steps = new LoginAndGroupSteps();
-    Group group;
-    GroupsPage groupsPage;
-    GroupPage groupPage;
-    String groupName;
+    private Group group;
+    private GroupsPage groupsPage;
+    private GroupPage groupPage;
+    private String groupName;
 
     @BeforeEach
     public void createMainPage() {
